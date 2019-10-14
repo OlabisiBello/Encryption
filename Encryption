@@ -1,0 +1,29 @@
+mode= input("Encrypt or decrypt")
+if(mode.lower()=="encrypt"):
+    key= int(input("Enter key :"))
+    message= input("Message:")
+    for c in message:
+        if(ord(c)+key>127):
+            print(chr((ord(c)+key)%127+32), end= "")
+        else:
+            print(chr(ord(c)+key), end= "")
+if(mode.lower()=="decrypt"):
+    key= int(input("Enter key :"))
+    message= input("Message:")
+    for c in message:
+        if(ord(c)-key-32>-1):
+            print(chr(ord(c)-key), end= "")
+        else:
+            print(chr(ord(c)+127-key-32),end="")
+if(mode=="hack"):
+    message= input("Message:")
+    for key in range(0,27):
+        s= ""
+        for c in message:
+            if(ord(c)-key-32>-1):
+                s+=chr(ord(c)-key)
+            else:
+                s+=chr((ord(c)+127)-key-32)
+        print(s)
+        
+
