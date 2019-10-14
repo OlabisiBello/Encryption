@@ -1,4 +1,4 @@
-mode= input("Encrypt or decrypt")
+mode= input("Encrypt,decrypt or hack: ")
 if(mode.lower()=="encrypt"):
     key= int(input("Enter key :"))
     message= input("Message:")
@@ -26,4 +26,5 @@ if(mode=="hack"):
                 s+=chr((ord(c)+127)-key-32)
         print(s)
         
+
 
